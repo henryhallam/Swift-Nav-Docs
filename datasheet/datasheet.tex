@@ -128,7 +128,7 @@ estimation.
 }]
 \tikzstyle{pin1}=[draw, circle, node distance=1.3cm, scale=0.3]
 \begin{center}
-  \begin{tikzpicture}[>=*]%[show background grid]
+  \begin{tikzpicture}[>=*]%,show background grid]
     % Put the graphic inside a node. This makes it easy to place the
     % graphic and to draw on top of it. 
     % The above right option is used to place the lower left corner
@@ -144,10 +144,20 @@ estimation.
           (2.16,5.55) coordinate (debug)
           (3.905,5.55) coordinate (uart1)
           (5.625,3.86) coordinate (uart2)
-          (6.5,2.375) coordinate (sma);
+          (6.5,2.375) coordinate (sma)
+          (1.82,-0.05) coordinate (reset)
+          (3.1,-0.05) coordinate (led1)
+          (3.7,-0.05) coordinate (led2);
           
     \node [below left of=usb, node distance=2.5cm] (usb_label) {Micro-USB};
     \draw[->] (usb_label) -| (usb);
+    
+    \node [below of=usb_label] (rst_label) {Reset Button};
+    \draw[->] (rst_label) -| (reset);
+    
+    \node [right of=rst_label, node distance=9.6cm] (led_label) {Status LEDs};
+    \draw[->] (led_label) -| (led2);
+    \draw[->] (led_label) -| (led1);
     
     \matrix (jtag_pins) [pinoutmatrix, above of=usb_label, node distance=1.75cm] {
       |[pinnum]| 1 & |[fill=red!70]| 3.3V          & |[fill=cyan!70]| TMS      & |[pinnum]| 2 \\
