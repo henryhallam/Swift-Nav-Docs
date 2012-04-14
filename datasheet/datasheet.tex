@@ -17,7 +17,8 @@
 % ---------------------------------------------------------------------------
 
 \version{1.0}
-\title{SwiftGNSS Datasheet}
+\title{Piksi Datasheet}
+\mysubtitle{Flexible, high-performance open-source GPS receiver platform}
 \author{Swift Navigation}
 \date{\today}
 
@@ -33,17 +34,17 @@
 \label{sec:Features}
 \begin{itemize}
   \bulletnoindent
-  \item Open-Source GNSS Receiver Platform.
-  \item Flexible architecture.
-  \item Carrier-phase RTK capable for centimetre level positioning.
-  \item 50Hz navigation solution update rate.
-  \item Small form factor.
-  \item Very low power consumption.
-  \item USB and 2x UART connectivity.
-  \item Integrated patch antenna.
-  \item Stand-alone operation.
-  \item Full-rate sample passthrough over USB.
-  \item Single-frequency L1 3-bit, 16.368 MS/s\\RF front-end.
+  \item Flexible, open-source architecture
+  \item 50 Hz position/velocity/time solutions
+  \item Centimeter-accurate relative positioning\\(Carrier phase RTK)
+  \item Small form factor
+  \item Low power consumption
+  \item USB and dual UART connectivity
+  \item Integrated patch antenna
+  \item Stand-alone operation
+  \item Full-rate raw sample passthrough over USB
+  \item 3-bit, 16.368 MS/s L1 front-end supports\\GPS, GLONASS and Galileo signals
+  \item Adaptive filtering for EMI rejection
 \end{itemize}
 \normalsize
 
@@ -52,10 +53,9 @@
 \label{sec:Applications}
 \begin{itemize}
   \bulletnoindent
-  \item GPS/GNSS Research.
-  \item Unmanned Aerial Vehicle Guidance.
-  \item Autonomous Landing Systems.
-  \item Surveying Systems.
+  \item GPS/GNSS research
+  \item Unmanned Aerial Vehicle guidance,\\e.g. formation flight and autonomous landing
+  \item Surveying systems
 \end{itemize}
 \normalsize
 
@@ -220,7 +220,7 @@ In addition to the on-board patch antenna, an external active antenna input is
 provided on an SMA connector and features a software switchable 3.3V bias.
 
 Selection between the on-board patch and the external antenna is made in
-software and can auto-detect the presence of an external active antenna.
+software, which can auto-detect the presence of an external active antenna.
 
 \subsection*{JTAG}
 
@@ -228,8 +228,9 @@ No JTAG adapter is required to develop for the SwiftGNSS as the board is
 supplied with a built-in bootloader.
 
 For advanced debugging a 0.05'' pitch micro JTAG header compatible with the
-ARM Cortex-M standard pinout is provided on the board, allowing access to the
-SwiftNAP FPGA and STM32F4 microcontroller JTAG chains.
+ARM Cortex-M standard pinout\footnote{ARM Cortex-M Debug Connector
+specification, \url{http://bit.ly/ICb6W6}} is provided on the board, allowing
+access to the SwiftNAP FPGA and STM32F4 microcontroller JTAG chains.
 
 \vspace{0.5cm}
 \begin{center}
@@ -248,7 +249,7 @@ SwiftNAP FPGA and STM32F4 microcontroller JTAG chains.
 
 \subsection*{Debug \& Expansion Header}
 
-Provides access to debugging signals from the SwiftNAP and I/O for future
+Access is provided to debugging signals from the SwiftNAP and I/O for future
 expansion boards and accessories. Assignment of these signals varies depending
 on the SwiftNAP firmware configuration.
 
