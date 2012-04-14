@@ -48,6 +48,12 @@
   \renewcommand{\theversion}{#1}
 }
 
+\newcommand{\thesubtitle}{}
+\newcommand{\mysubtitle}[1]{
+  \renewcommand{\thesubtitle}{#1}
+}
+
+
 % Fancy headers
 \pagestyle{fancy}
 \lhead{\@author}
@@ -103,7 +109,11 @@
   \null
   \begin{center}%
   \let \footnote \thanks
-    {\Huge{\textbf{\color{alt}\@title}} \par}%
+    {
+      \Huge{\textbf{\color{alt}\@title}}\\
+      \Large{\textbf{\thesubtitle}}
+      \par
+    }%
   \end{center}%
   \par
   \vskip 4em
