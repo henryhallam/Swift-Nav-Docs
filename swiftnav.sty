@@ -29,6 +29,9 @@
     urlcolor=alt
 }
 
+% Version control macros
+\input{../vc}
+
 % Define our alternate color
 \definecolor{alt}{RGB}{140,0,0}
 
@@ -43,7 +46,7 @@
 \setlength\multicolsep{20pt}
 
 % Define command to set a document version.
-\newcommand{\theversion}{?}
+\newcommand{\theversion}{\VCRevisionMod}
 \newcommand{\version}[1]{
   \renewcommand{\theversion}{#1}
 }
@@ -53,6 +56,8 @@
   \renewcommand{\thesubtitle}{#1}
 }
 
+% Date from version control, maybe not?
+%\date{\VCDateTEX}
 
 % Fancy headers
 \pagestyle{fancy}
